@@ -27,7 +27,7 @@ type Font struct {
 
 type Vector4 [4]float32
 
-func NewFont(fontPath string, scale int32, dpi float64, width, height float32) Font {
+func NewFont(fontPath string, scale int32, dpi float64, width, height float32) *Font {
 	font := loadFont(fontPath)
 	coords, texture, offsets := generateAtlas(font, scale, dpi, width, height)
 	program := createProgram()
@@ -65,7 +65,7 @@ func NewFont(fontPath string, scale int32, dpi float64, width, height float32) F
 
 	vao.Unbind()
 
-	return Font {
+	return &Font {
 		program:program,
 		vao:vao,
 		vbo:vbo,
