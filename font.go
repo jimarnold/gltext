@@ -25,7 +25,7 @@ type Font struct {
 	color          []float32
 }
 
-type Vector4 []float32
+type Vector4 [4]float32
 
 func NewFont(fontPath string, scale int32, dpi float64, width, height float32) Font {
 	font := loadFont(fontPath)
