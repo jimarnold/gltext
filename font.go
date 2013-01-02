@@ -158,7 +158,7 @@ func (this *Font) Printf(x, y float32, fs string, argv ...interface{}) {
 	this.program.Use()
 	this.vao.Bind()
 
-	this.colorUniform.Uniform4fv(this.color)
+	this.colorUniform.Uniform4fv(1, this.color)
 	totalOffset := float32(0)
 
 	s := fmt.Sprintf(fs, argv...)
